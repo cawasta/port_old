@@ -1,0 +1,654 @@
+/*    GENERAL   */
+* {
+  transition: all ease-in-out 250ms;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+.container {
+  max-width: 65%;
+  margin: 0 auto;
+}
+.container-wide {
+  max-width: 90%;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+h1, h2 {
+  margin: 0;
+}
+
+#menuToggle input {
+  display: none;
+}
+
+
+/*    HEADER- & NAVIGATION-SECTION   */
+header {
+  background-color: #1c6475;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  opacity: .95;
+}
+.header-up {
+  top: -4.5em;
+}
+header::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.logo a {
+  margin: 0;
+  text-decoration: none;
+  color: #cecece;
+  padding: .1em .3em;
+  text-transform: uppercase;
+  outline: 2px solid #cecece;
+  outline-offset: .15em;
+  font-size: 1.4em;
+}
+.logo a:hover {
+  color: #C1B425;
+  outline: 2px solid #C1B425;
+}
+.logo {
+  float: left;
+  padding: 1.4em 0;
+  color: #2EA5C1;
+  cursor: default;
+}
+nav {
+  float: right;
+}
+nav a {
+  text-decoration: none;
+  color: #cecece;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  margin-left: 4em;
+  padding-top: 1.7em;
+  position: relative;
+}
+nav a:hover,
+nav a:focus {
+  color: #C1B425;
+}
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #C1B425;
+  position: absolute;
+  top: 0;
+  width: 0%;
+  transition: all ease-in-out 225ms;
+}
+nav a:hover::before {
+  width: 100%;
+}
+nav a:focus::before {
+  width: 100%;
+}
+
+
+/*    HERO-SECTION   */
+.hero-section {
+  background-image: url(../img/hero.jpeg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-title {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #cecece;
+  font-size: 2.5em;
+  padding: .2em .4em;
+  background: rgba(72, 85, 103, 0.5);
+}
+
+
+/*    ABOUT-SECTION   */
+.about-section {
+  padding: 11em 0 10em 0;
+  background: #2d393e;
+}
+.about-img{
+  position: relative;
+  display: block;
+  margin: 0 auto 4em auto;
+  height: 15em;
+  width: 15em;
+  border-radius: 110px;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+}
+.about-title {
+  text-align: center;
+  color: #cecece;
+  margin-bottom: 2em;
+}
+.about-title h2 {
+  font-size: 2.5em;
+}
+.about-text-headline {
+  margin: 0;
+  grid-column: 1 / 1;
+  border-bottom: .3px solid #cecece;
+  padding-top: 3.8em;
+}
+.about-text-headline h3 {
+  margin: 0;
+  color: #cecece;
+}
+.about-text-p p {
+  margin: 0;
+}
+.about-text-p {
+  grid-column: 2 / 3;
+  text-align: justify;
+  color: #cecece;
+  border-bottom: .3px solid #cecece;
+  padding-bottom: 4em;
+  padding-top: 3.5em;
+  font-size: 1.1em;
+}
+.about-text-p:last-child,
+.about-text-headline:nth-last-child(2) {
+  border-bottom: none;
+}
+
+
+/*    CTA-SECTION   */
+.cta-section{
+  background-color: #C1B425;
+  padding: 20em 0em;
+}
+.cta-section h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 4em;
+  color: #2EA5C1;
+}
+.cta-section h2 span{
+  display: block;
+  color: #2d393e;
+  font-size: .9em;
+}
+
+
+/*    PORTFOLIO-SECTION   */
+.portfolio-section {
+  padding: 10em 0 11em 0;
+  background-color: #cecece;
+  color: #2d393e;
+}
+.portfolio-section h2 {
+  text-align: center;
+  font-size: 3.5em;
+  padding-bottom: 2em;
+}
+figure {
+  margin: 0;
+}
+.portfolio-button {
+  text-decoration: none;
+  color: #2EA5C1;
+  border: 1px solid #2EA5C1;
+  padding: .5em 1.4em;
+}
+.portfolio-button:hover {
+  color: #C1B425;
+  border: 1px solid #C1B425;
+}
+.portfolio-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.portfolio-item {
+  margin: 0 0 .3em 0;
+  width: 32.8%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  color: #cecece;
+}
+.portfolio-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(45, 57, 62, 0.7);
+  text-align: center;
+  padding-bottom: 2em;
+  transform: translateY(160%);
+}
+.portfolio-item:hover .portfolio-description {
+  transform: translateY(0%);
+}
+
+
+/* CONTACT-SECTION */
+.contact-section {
+  background-color: #2d393e;
+  padding: 9em 0 7em 0;
+  color: #cecece;
+}
+.contact-box {
+  text-align: center;
+
+}
+.contact-section svg {
+  padding-bottom: 2em;
+}
+.contact-section a {
+  text-decoration: none;
+  color: #cecece;
+}
+.contact-section a:hover {
+  color: #2EA5C1;
+}
+.contact-section h3 {
+  padding-bottom: .9em;
+  text-transform: uppercase;
+  color: #1c6475;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.contact-section h2 {
+  font-size: 3em;
+  text-align: center;
+  padding-bottom: 1.4em;
+}
+.contact-section h3,
+.contact-section p {
+  margin: 0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.adress {
+  grid-column: 1 / 2;
+}
+.telephone {
+  grid-column: 2 / 3;
+}
+.mail {
+  grid-column: 3 / 4;
+}
+
+
+/* FOOTER */
+footer {
+  background-color: #2a353a;
+  margin: 0;
+  padding: 1em 0;
+  border-top: 1px solid #232c30;
+}
+footer p {
+  margin: 0;
+  text-align: center;
+  color: #cecece;
+  font-size: 1.2em;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 943px) {
+
+  /* ABOUT SECTION */
+  header {
+    width: 100%;
+  }
+
+  .header-up {
+    top: -7.5em;
+  }
+
+  .logo {
+    margin: 0 50%;
+    transform: translateX(-50%);
+  }
+
+  nav {
+    float: none;
+  }
+  nav ul {
+    margin: none;
+    text-align: center;
+  }
+  nav li {
+    margin-left: .4em;
+    padding-top: 0;
+    padding-bottom: 1.2em;
+  }
+
+
+  /* ABOUT SECTION */
+  .about-section {
+    padding: 9em 0 6em 0;
+  }
+
+  .about-grid {
+    display: block;
+  }
+
+  .about-title {
+    margin-bottom: 0;
+  }
+
+  .about-text-headline {
+    border-bottom: none;
+    padding-top: 4em;
+  }
+
+  .about-text-p {
+    padding-top: 2em;
+  }
+
+
+  /* CTA SECTION */
+  .cta-section {
+    padding: 9em 0;
+  }
+
+
+  /* PORTFOLIO SECTION */
+  .portfolio-section {
+    padding: 8em 0 9em 0;
+  }
+
+  .portfolio-section .container {
+    max-width: 95%;
+  }
+
+  .portfolio-section h2 {
+    padding-bottom: 1.5em;
+  }
+
+  .portfolio-item {
+    width: 49.4%;
+    margin: 0 0 1em 0;
+  }
+
+  .portfolio-description {
+    transform: translateY(0);
+  }
+
+
+  /* CONTACT SECTION */
+  .contact-box {
+    margin-left: 2.5em;
+  }
+  .contact-box:first-child {
+    margin-left: 0;
+  }
+  .contact-box:last-of-type {
+    margin-left: 1.5em;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  /*    BURGER-MENU
+  https://codepen.io/erikterwan/pen/EVzeRP
+  https://codemyui.com/tag/hamburger-menu/
+  */
+  #menuToggle {
+    display: block;
+    position: relative;
+    top: 25px;
+    left: -40px;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+  }
+
+  #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #cecece;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+
+  #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  /*
+   * Transform all the slices of hamburger
+   * into a crossmark.
+   */
+  #menuToggle input:checked ~ span
+  {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #C1B425;
+  }
+
+  /*
+   * But let's hide the middle one.
+   */
+  #menuToggle input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+   * Ohyeah and the last one should go the other direction
+   */
+  #menuToggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /*
+   * Make this absolute positioned
+   * at the top left of the screen
+   */
+  #menu {
+    position: absolute;
+    width: 80%;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    background: #1c6475;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+  #menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  /*
+   * And let's slide it in from the left
+   */
+  #menuToggle input:checked ~ ul {
+    transform: none;
+  }
+
+  /* HEADER */
+  header {
+    height: 4.5rem;
+  }
+
+  .logo {
+    margin: 0 50%;
+    transform: translateX(-50%);
+  }
+
+  nav {
+    float: none;
+    text-align: center;
+  }
+  nav ul li {
+    display: block;
+    margin-left: 0;
+  }
+
+
+  /* HERO SECTION */
+  .hero-title {
+    width: 100%;
+    font-size: 2em;
+    padding: 0;
+  }
+
+  .about-section {
+    padding: 8em 0 5em 0;
+  }
+
+  .about-img {
+    height: 13em;
+    width: 13em;
+    border-radius: 110px;
+  }
+
+  .about-title {
+    display: block;
+    font-size: .9em;
+    margin-bottom: 0;
+  }
+
+  .about-text-headline {
+    padding-top: 4em;
+  }
+
+  .about-text-p {
+    padding-top: 1.5em;
+    padding-bottom: 2.7em;
+    text-align: left;
+  }
+
+
+  /* CTA SECTION */
+  .container-wide {
+    max-width: 80%;
+  }
+  .cta-section {
+    padding: 6em 0;
+  }
+
+  .cta-section h2 {
+    font-size: 3em;
+  }
+  .cta-break {
+    display: block;
+  }
+
+
+  /* PORTFOLIO SECTION */
+  .portfolio-section {
+    padding: 7em 0 8em 0;
+  }
+
+  .portfolio-section .container {
+    max-width: 100%;
+  }
+
+  .portfolio-section h2 {
+    padding-bottom: 1.4em;
+  }
+  .portfolio-item {
+    width: 100%;
+    margin: 0;
+  }
+
+
+
+  /* CONTACT SECTION */
+  .contact-grid {
+    display: block;
+  }
+
+  .contact-section {
+    padding: 7em 0;
+  }
+
+  .contact-section h2 {
+    font-size: 2.5em;
+    padding-bottom: 0;
+  }
+
+  .address {
+    margin: 4em;
+  }
+
+  .contact-section svg {
+    padding-bottom: .8em;
+  }
+
+  .mail {
+    margin-top: 3em;
+  }
